@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .payment-panel { display: none; }
+    .payment-panel.active { display: block; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="index.html#amenities">Amenities</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">U</div>
+          <span id="nav-user-name">User</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main style="min-height: 80vh; padding: 2rem;">
+<div style="max-width: 800px; margin: auto;" id="payment-section">
+  <h2>Payment</h2>
+  <div style="background:#f9f9f9; padding:1.5rem; border-radius:8px; margin-bottom:2rem;">
+    <h3>Booking Summary</h3>
+    <p>Booking ID: <span id="pay-booking-id"></span></p>
+    <p>Room: <span id="pay-room"></span></p>
+    <p>Check-in: <span id="pay-checkin"></span></p>
+    <p>Check-out: <span id="pay-checkout"></span></p>
+    <p>Nights: <span id="pay-nights"></span> | Guests: <span id="pay-guests"></span></p>
+    <p>Subtotal: <span id="pay-subtotal"></span></p>
+    <p>Tax: <span id="pay-tax"></span></p>
+    <h3 style="margin-top:0.5rem;">Total to Pay: <span id="pay-total"></span></h3>
+  </div>
+  
+  <div style="display:flex; gap:1rem; margin-bottom:1rem;">
+    <button class="payment-tab active btn btn-primary" data-panel="panel-esewa">eSewa</button>
+    <button class="payment-tab btn btn-outline" data-panel="panel-cash">Pay at Hotel</button>
+  </div>
+  
+  <div id="panel-esewa" class="payment-panel active" style="padding:1.5rem; border:1px solid #ccc; border-radius:8px;">
+    <h3>Pay with eSewa</h3>
+    <p>Amount: <span id="esewa-amount"></span></p>
+    <button id="esewa-pay-btn" class="btn btn-success" onclick="initiateEsewa()">Pay via eSewa</button>
+  </div>
+  
+  <div id="panel-cash" class="payment-panel" style="padding:1.5rem; border:1px solid #ccc; border-radius:8px;">
+    <h3>Pay at Hotel (Cash)</h3>
+    <p>You can pay in cash upon arrival at the hotel.</p>
+    <button id="cash-pay-btn" class="btn btn-primary" onclick="payCash()">Confirm Cash Payment</button>
+  </div>
+</div>
+<script src="js/payment.js"></script>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

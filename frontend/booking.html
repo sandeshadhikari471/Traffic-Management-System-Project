@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Booking</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="index.html#amenities">Amenities</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">U</div>
+          <span id="nav-user-name">User</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main style="min-height: 80vh; padding: 2rem;">
+<div style="max-width: 800px; margin: auto;">
+  <h2>Complete Your Booking</h2>
+  <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+    <div style="flex:1;">
+      <form id="booking-form">
+        <label>Check-In Date</label><input type="date" id="check-in" required style="width:100%; padding:0.5rem; margin-bottom:1rem;" />
+        <label>Check-Out Date</label><input type="date" id="check-out" required style="width:100%; padding:0.5rem; margin-bottom:1rem;" />
+        <label>Guests</label><input type="number" id="guests" required min="1" style="width:100%; padding:0.5rem; margin-bottom:1rem;" />
+        <div id="availability-status" style="margin-bottom:1rem;"></div>
+        <label>Special Requests</label><textarea id="special-requests" rows="4" style="width:100%; padding:0.5rem; margin-bottom:1rem;"></textarea>
+        <button type="submit" id="book-btn" class="btn btn-primary" style="width:100%;">Proceed to Payment</button>
+      </form>
+    </div>
+    <div style="width:300px; background:#f9f9f9; padding:1.5rem; border-radius:8px;">
+      <h3>Room Summary</h3>
+      <div id="room-icon" style="font-size:2rem; margin-bottom:0.5rem;"></div>
+      <div id="room-number" style="font-weight:bold;"></div>
+      <div id="room-type"></div>
+      <div id="room-capacity"></div>
+      <div id="room-price" style="margin-bottom:1rem;"></div>
+      <div id="room-amenities-list" style="margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
+      <hr style="margin-bottom:1rem;" />
+      <div>Nights: <span id="summary-nights"></span></div>
+      <div>Rate: <span id="summary-rate"></span></div>
+      <div>Check-in: <span id="summary-checkin"></span></div>
+      <div>Check-out: <span id="summary-checkout"></span></div>
+      <hr style="margin-bottom:1rem;" />
+      <div>Subtotal: <span id="summary-subtotal"></span></div>
+      <div>Tax (13%): <span id="summary-tax"></span></div>
+      <h3 style="margin-top:0.5rem;">Total: <span id="summary-total"></span></h3>
+    </div>
+  </div>
+</div>
+<script src="js/booking.js"></script>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

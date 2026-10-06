@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Payment Result</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="index.html#amenities">Amenities</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">U</div>
+          <span id="nav-user-name">User</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main style="min-height: 80vh; padding: 2rem; display:flex; align-items:center; justify-content:center;">
+<div style="max-width: 600px; width:100%; text-align:center; background:#f9f9f9; padding:3rem; border-radius:8px;">
+  <h2 id="result-title">Processing...</h2>
+  <p id="result-message"></p>
+  <div style="margin-top:2rem;">
+    <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get('status');
+  const bookingId = params.get('booking_id');
+  const title = document.getElementById('result-title');
+  const message = document.getElementById('result-message');
+  
+  if (status === 'cash' || status === 'success') {
+    title.textContent = '✅ Payment Successful!';
+    title.style.color = 'green';
+    message.textContent = `Your booking ${bookingId ? '('+bookingId+')' : ''} has been confirmed. Thank you for choosing Himalayan Grand Hotel!`;
+  } else {
+    title.textContent = '❌ Payment Failed / Cancelled';
+    title.style.color = 'red';
+    message.textContent = 'Your payment could not be completed. Please try again from your dashboard.';
+  }
+});
+</script>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel.</p>
+  </div>
+</footer>
+</body>
+</html>

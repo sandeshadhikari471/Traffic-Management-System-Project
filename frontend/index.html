@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Nepal's Premier Luxury Hotel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .nepal-banner { background: var(--secondary); color: var(--bg-dark); text-align: center; padding: 0.6rem; font-size: 0.85rem; font-weight: 600; }
+    .hero-scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); text-align: center; font-size: 0.8rem; animation: bounce 2s infinite; z-index: 2; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+    .why-choose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .why-list { list-style: none; margin-top: 1.5rem; }
+    .why-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+    .why-icon { width: 42px; height: 42px; background: rgba(139,37,0,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .why-list h5 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--primary); }
+    .why-list p { font-size: 0.88rem; color: var(--text-secondary); }
+    .why-image-stack { position: relative; height: 420px; }
+    .why-img-main { position: absolute; inset: 0; background: linear-gradient(135deg, #8B2500, #D4A017); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 8rem; box-shadow: var(--shadow-lg); }
+    .why-img-float { position: absolute; bottom: -1.5rem; right: -1.5rem; width: 160px; height: 160px; background: white; border-radius: var(--radius-lg); border: 3px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 4rem; box-shadow: var(--shadow-lg); z-index: 2; }
+    .cta-section { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); text-align: center; padding: 6rem 2rem; }
+    .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--white); }
+    .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .bg-alt { background: var(--bg-secondary); }
+    .price-label { background: var(--secondary); color: var(--bg-dark); font-weight: 800; font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem; }
+    @media(max-width:768px){ .why-choose-grid{grid-template-columns:1fr} .why-image-stack{display:none} }
+  </style>
+</head>
+<body>
+<div class="nepal-banner">🇳🇵 Namaste! Welcome to Nepal's Premier Himalayan Hotel | Book Now & Save Up to 20% | eSewa Payments Accepted 💳</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">U</div>
+          <span id="nav-user-name">User</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <a href="dashboard.html">📋 My Bookings</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">🏆 Nepal's #1 Luxury Hotel</div>
+      <h1>Experience True <span class="highlight">Himalayan Luxury</span></h1>
+      <p class="hero-desc">Nestled in the heart of Kathmandu, Himalayan Grand Hotel offers unparalleled luxury with breathtaking mountain views. Starting from just NPR 3,500/night.</p>
+      <div class="hero-cta">
+        <a href="rooms.html" class="btn btn-secondary btn-lg">🛏️ Explore Rooms</a>
+        <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="stat-value">500+</div><div class="stat-label">Happy Guests</div></div>
+        <div class="hero-stat"><div class="stat-value">9</div><div class="stat-label">Room Types</div></div>
+        <div class="hero-stat"><div class="stat-value">5★</div><div class="stat-label">Rating</div></div>
+        <div class="hero-stat"><div class="stat-value">10+</div><div class="stat-label">Years</div></div>
+      </div>
+    </div>
+    <!-- Quick Booking -->
+    <div class="hero-booking-card">
+      <h3>🔍 Quick Room Search</h3>
+      <form id="quick-search-form">
+        <div class="form-group"><label>Check-in Date</label><input type="date" id="qs-checkin" required></div>
+        <div class="form-group"><label>Check-out Date</label><input type="date" id="qs-checkout" required></div>
+        <div class="form-group">
+          <label>Room Type</label>
+          <select id="qs-type">
+            <option value="">All Room Types</option>
+            <option value="Standard">🛏️ Standard (from NPR 3,500)</option>
+            <option value="Deluxe">🌟 Deluxe (from NPR 6,500)</option>
+            <option value="Super Deluxe">💫 Super Deluxe (from NPR 10,500)</option>
+            <option value="Suite">👑 Suite (from NPR 18,000)</option>
+            <option value="Presidential Suite">🏆 Presidential (from NPR 35,000)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Guests</label>
+          <select id="qs-guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="6">5-6 Guests</option>
+          </select>
+        </div>
+        <button type="submit" class="booking-quick-btn">🔍 Search Available Rooms</button>
+      </form>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">↓ Scroll to explore</div>
+</section>
+
+<!-- ROOM TYPES -->
+<section style="padding:5rem 0;background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Room Collection</h2>
+      <div class="section-divider"></div>
+      <p>From cozy standard rooms to our majestic Presidential Suite — find your perfect stay</p>
+    </div>
+    <div class="room-types-grid">
+      <div class="room-type-card" onclick="location.href='rooms.html?type=Standard'">
+        <span class="type-icon">🛏️</span><span class="type-name">Standard</span><div class="type-price">From NPR 3,500/night</div>
+      </div>
+      <div class="room-type-card" onclick="location.href='rooms.html?type=Deluxe'">
+        <span class="type-icon">🌟</span><span class="type-name">Deluxe</span><div class="type-price">From NPR 6,500/night</div>
+      </div>
+      <div class="room-type-card" onclick="location.href='rooms.html?type=Super Deluxe'">
+        <span class="type-icon">💫</span><span class="type-name">Super Deluxe</span><div class="type-price">From NPR 10,500/night</div>
+      </div>
+      <div class="room-type-card" onclick="location.href='rooms.html?type=Suite'">
+        <span class="type-icon">👑</span><span class="type-name">Suite</span><div class="type-price">From NPR 18,000/night</div>
+      </div>
+      <div class="room-type-card" onclick="location.href='rooms.html?type=Presidential Suite'">
+        <span class="type-icon">🏆</span><span class="type-name">Presidential</span><div class="type-price">From NPR 35,000/night</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="rooms.html" class="btn btn-primary btn-lg">View All Available Rooms →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section" id="amenities">
+  <div class="container">
+    <div class="section-title">
+      <h2>World-Class Amenities</h2>
+      <div class="section-divider"></div>
+      <p>Everything you need for a perfect Himalayan retreat</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><span class="feature-icon">🏔️</span><h4>Mountain View Rooms</h4><p>Wake up to breathtaking panoramic Himalayan views from our specially designed rooms</p></div>
+      <div class="feature-card"><span class="feature-icon">🍽️</span><h4>Nepali Cuisine Restaurant</h4><p>Authentic Nepali and international cuisine served by award-winning chefs daily</p></div>
+      <div class="feature-card"><span class="feature-icon">🧘</span><h4>Himalayan Spa & Wellness</h4><p>Traditional Ayurvedic treatments and modern spa therapies for total relaxation</p></div>
+      <div class="feature-card"><span class="feature-icon">🏊</span><h4>Infinity Pool</h4><p>Swim with the mountains as your backdrop in our stunning rooftop infinity pool</p></div>
+      <div class="feature-card"><span class="feature-icon">💪</span><h4>Modern Fitness Center</h4><p>State-of-the-art gym equipment with professional trainers available 24/7</p></div>
+      <div class="feature-card"><span class="feature-icon">🚁</span><h4>Helicopter Tours</h4><p>Exclusive Himalayan helicopter tours and Everest flybys arranged for our guests</p></div>
+      <div class="feature-card"><span class="feature-icon">🎭</span><h4>Cultural Programs</h4><p>Daily traditional Nepali dance, music, and cultural evening programs for guests</p></div>
+      <div class="feature-card"><span class="feature-icon">🚖</span><h4>Airport Transfer</h4><p>Complimentary Tribhuvan International Airport pickup for all suite guests</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY CHOOSE -->
+<section class="section bg-alt" id="about">
+  <div class="container">
+    <div class="why-choose-grid">
+      <div>
+        <div class="price-label">Why Choose Us</div>
+        <h2 style="font-size:2.2rem;color:var(--primary);margin:0.5rem 0 1rem;">Nepal's Finest Hospitality Since 2014</h2>
+        <p style="color:var(--text-secondary);line-height:1.8;">Himalayan Grand Hotel has been the beacon of luxury hospitality in Nepal for over a decade. We combine traditional Nepali warmth with modern luxury.</p>
+        <ul class="why-list">
+          <li><div class="why-icon">🌿</div><div><h5>Authentic Nepal Experience</h5><p>Traditional architecture, local art, and genuine Nepali hospitality in every corner</p></div></li>
+          <li><div class="why-icon">⭐</div><div><h5>5-Star Rated Service</h5><p>Consistently rated 5 stars by guests and TripAdvisor for exceptional service</p></div></li>
+          <li><div class="why-icon">💳</div><div><h5>eSewa Digital Payment</h5><p>Convenient eSewa payment integration for hassle-free digital transactions in NPR</p></div></li>
+          <li><div class="why-icon">🔒</div><div><h5>Safe & Secure Booking</h5><p>SSL-encrypted secure booking system with instant confirmation and flexible cancellation</p></div></li>
+        </ul>
+        <a href="rooms.html" class="btn btn-primary" style="margin-top:1rem;">Book Your Stay</a>
+      </div>
+      <div class="why-image-stack">
+        <div class="why-img-main">🏔️</div>
+        <div class="why-img-float">🇳🇵</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Guest Reviews</h2>
+      <div class="section-divider"></div>
+      <p>What our valued guests say about their Himalayan experience</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">Absolutely stunning hotel! The mountain views from our Deluxe room were breathtaking. The staff's Namaste greeting made us feel so welcome. eSewa payment made booking a breeze!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div><div class="author-name">Rajesh Maharjan</div><div class="author-location">📍 Pokhara, Nepal</div><div class="stars">⭐⭐⭐⭐⭐</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">The Presidential Suite exceeded all our expectations. Personal chef, private terrace with 360° Himalayan views — truly a once-in-a-lifetime experience. Will definitely be back!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div><div class="author-name">Sanjay & Priya Sharma</div><div class="author-location">📍 Delhi, India</div><div class="stars">⭐⭐⭐⭐⭐</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Perfect honeymoon suite! The rose petal setup, plunge pool, and couple spa were magical. The hotel arranged a helicopter tour to Everest — absolutely unforgettable!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div><div class="author-name">Aarav & Mina Thapa</div><div class="author-location">📍 Kathmandu, Nepal</div><div class="stars">⭐⭐⭐⭐⭐</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2>Ready for Your Himalayan Adventure?</h2>
+    <p>Book your stay now and experience Nepal's finest luxury. Early birds get up to 20% off!</p>
+    <div class="cta-btns">
+      <a href="rooms.html" class="btn btn-secondary btn-lg">🛏️ Book Now</a>
+      <a href="tel:+97714500000" class="btn btn-outline-light btn-lg">📞 Call Us</a>
+    </div>
+    <div style="margin-top:3rem;color:rgba(255,255,255,0.6);font-size:0.9rem;">
+      <p>📍 Thamel, Kathmandu 44600, Nepal &nbsp;|&nbsp; 📞 +977-1-4500000 &nbsp;|&nbsp; 📧 info@himalayangrand.com.np</p>
+      <p style="margin-top:0.5rem;">🕐 Reception Open 24/7 &nbsp;|&nbsp; Check-in: 2:00 PM &nbsp;|&nbsp; Check-out: 12:00 PM</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">🏔️ Himalayan Grand Hotel</span>
+      <p>Nepal's premier luxury hotel offering unparalleled Himalayan hospitality since 2014.</p>
+      <div class="footer-contact">
+        <p>📍 Thamel, Kathmandu 44600</p>
+        <p>📞 +977-1-4500000</p>
+        <p>📧 info@himalayangrand.com.np</p>
+        <p>💳 eSewa | Cash | Card Accepted</p>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms & Suites</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guest Services</h4>
+      <ul class="footer-links">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Create Account</a></li>
+        <li><a href="dashboard.html">My Bookings</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <ul class="footer-links">
+        <li><a href="#">Cancellation Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+      <div style="margin-top:1.5rem;padding:1rem;background:rgba(212,160,23,0.1);border-radius:8px;border:1px solid rgba(212,160,23,0.2);">
+        <div style="font-size:0.8rem;color:var(--secondary);font-weight:600;margin-bottom:0.5rem;">Payment Methods</div>
+        <div style="font-size:0.9rem;">💚 eSewa &nbsp;|&nbsp; 💵 Cash &nbsp;|&nbsp; 💳 Card</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel. All rights reserved. 🇳🇵</p>
+    <p>Made with ❤️ for Nepal Tourism | NPR Currency</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  const checkin = document.getElementById('qs-checkin');
+  const checkout = document.getElementById('qs-checkout');
+  checkin.min = today; checkin.value = today;
+  const tom = new Date(); tom.setDate(tom.getDate()+1);
+  checkout.min = tom.toISOString().split('T')[0];
+  checkout.value = tom.toISOString().split('T')[0];
+  checkin.addEventListener('change', () => {
+    checkout.min = new Date(new Date(checkin.value).setDate(new Date(checkin.value).getDate()+1)).toISOString().split('T')[0];
+  });
+  document.getElementById('quick-search-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const p = new URLSearchParams({ check_in: checkin.value, check_out: checkout.value, type: document.getElementById('qs-type').value, guests: document.getElementById('qs-guests').value });
+    location.href = 'rooms.html?' + p.toString();
+  });
+  const user = HGH.getUser();
+  if (user) { const el = document.getElementById('user-initial'); if(el) el.textContent = user.name.charAt(0).toUpperCase(); }
+});
+</script>
+</body>
+</html>

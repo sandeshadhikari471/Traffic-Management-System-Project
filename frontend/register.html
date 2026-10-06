@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="index.html#amenities">Amenities</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">U</div>
+          <span id="nav-user-name">User</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <span class="logo-icon">🏔️</span>
+        <h2>Create an Account</h2>
+        <p>Join Himalayan Grand Hotel today</p>
+      </div>
+      <form id="register-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" required placeholder="Full Name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required placeholder="Email Address" />
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" id="phone" required placeholder="Phone Number" />
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" id="address" required placeholder="Full Address" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" required placeholder="Create Password" />
+            <button type="button" class="password-toggle">👁️</button>
+          </div>
+          <div id="password-strength" class="strength-bar" style="margin-top:0.5rem;"></div>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="confirm-password" required placeholder="Confirm Password" />
+            <button type="button" class="password-toggle">👁️</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem;">Create Account</button>
+      </form>
+      <div class="auth-switch">
+        Already have an account? <a href="login.html">Login</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/auth.js"></script>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

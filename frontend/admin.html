@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Grand Hotel - Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">🏔️</span>
+      <div class="nav-brand-text">
+        <span class="hotel-name">Himalayan Grand Hotel</span>
+        <span class="hotel-sub">Kathmandu, Nepal</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="index.html#amenities">Amenities</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div id="nav-auth-links">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        <a href="register.html" class="btn btn-secondary btn-sm">Sign Up</a>
+      </div>
+      <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+        <button class="nav-user-btn">
+          <div class="user-avatar-sm" id="user-initial">A</div>
+          <span id="nav-user-name">Admin</span> ▾
+        </button>
+        <div class="user-dropdown" id="user-dropdown">
+          <a href="dashboard.html">🏠 My Dashboard</a>
+          <hr>
+          <button onclick="HGH.logout()">🚪 Logout</button>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main style="min-height: 80vh; padding: 2rem;">
+<div style="max-width: 1000px; margin: auto;">
+  <h2>Admin Panel</h2>
+  <div style="background:#f4f4f4; padding:2rem; border-radius:8px; text-align:center; margin-top:2rem;">
+    <h3>Admin functions are coming soon!</h3>
+    <p>This page is a placeholder for the future admin dashboard where you can manage rooms, bookings, and users.</p>
+    <a href="dashboard.html" class="btn btn-primary" style="margin-top:1rem;">Back to User Dashboard</a>
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const user = HGH.getUser();
+  if (!user || user.role !== 'admin') {
+    window.location.href = 'index.html';
+  }
+});
+</script>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2024 Himalayan Grand Hotel.</p>
+  </div>
+</footer>
+</body>
+</html>
